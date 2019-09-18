@@ -11,9 +11,9 @@ export class ListComponent implements OnInit {
   newTodo: Todo;
   todos: Todo[] = [];
   constructor() {
-    this.todos.push(new Todo('Keine Ahnung!'));
-    this.todos.push(new Todo('Immer noch keine Ahnung!'));
-    this.todos.push(new Todo('Maul!'));
+    this.todos.push(new Todo('Was geht '));
+    this.todos.push(new Todo('Was geht 2!'));
+    this.todos.push(new Todo('Moin!'));
     this.newTodo = new Todo('');
   }
 
@@ -27,5 +27,9 @@ export class ListComponent implements OnInit {
   save() {
     this.todos.push(this.newTodo);
     this.newTodo = new Todo('');
+  }
+
+  delete(todo: Todo) {
+    this.todos = this.todos.filter(t => t !== todo);
   }
 }
